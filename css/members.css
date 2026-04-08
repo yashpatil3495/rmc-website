@@ -42,7 +42,7 @@ body::before {
 
 .top-header {
     text-align: center;
-    padding: 60px 20px;
+    padding: 45px 20px;
     background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(30,20,0,0.6) 100%);
     backdrop-filter: blur(10px);
     border-bottom: 2px solid #d4af37;
@@ -74,7 +74,7 @@ body::before {
 .members {
     max-width: 1100px;
     margin: 60px auto;
-    padding: 0 30px 80px;
+    padding: 0 30px 60px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -220,7 +220,7 @@ footer {
 /* ===== SEARCH AND FILTER SECTION ===== */
 .search-filter-section {
     max-width: 1100px;
-    margin: 40px auto 50px;
+    margin: 35px auto 40px;
     padding: 0 30px;
     display: flex;
     flex-direction: column;
@@ -314,7 +314,7 @@ footer {
 .dynamic-members-container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 30px 80px;
+    padding: 0 30px 60px;
 }
 
 .member-type-section {
