@@ -1,8 +1,8 @@
 /* ===== UPCOMING EVENTS SECTION STYLES ===== */
 .upcoming-section {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 90px auto;
-    padding: 55px 30px;
+    padding: 50px 30px;
     background: rgba(0,0,0,0.55);
     backdrop-filter: blur(14px);
     border-radius: 24px;
@@ -147,7 +147,10 @@
 .upcoming-placeholder p { font-size: 16px; margin: 0; font-style: italic; }
 
 @media (max-width: 600px) {
-    .upcoming-section { padding: 36px 16px; margin: 60px 15px; }
+    .upcoming-section { 
+        padding: 35px 20px; 
+        margin: 60px 20px; 
+    }
     .upcoming-header h2 { font-size: 22px; }
     .upcoming-cards { grid-template-columns: 1fr; }
 }
@@ -433,14 +436,249 @@ section p {
 .activity-section,
 .history-section,
 .contact-section {
-    max-width: 850px;
+    max-width: 1100px;
     margin: 90px auto;
-    padding: 45px 20px;
-    background: rgba(0,0,0,0.45);
-    backdrop-filter: blur(var(--blur, 6px));
-    border-radius: 16px;
-    transition: backdrop-filter 0.3s ease;
+    padding: 50px 30px;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    border: 1px solid rgba(212,175,55,0.25);
     animation: glow 2.5s infinite alternate;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 40px;
+    letter-spacing: 4px;
+    color: #d4af37;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #FFD700, #d4af37, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: shimmer 3s infinite linear;
+}
+
+.contact-subtitle {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Contact Cards Grid */
+.contact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Contact Card */
+.contact-card {
+    background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(20,10,0,0.4) 100%);
+    border: 2px solid #d4af37;
+    border-radius: 20px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(212,175,55,0.1);
+    backdrop-filter: blur(2px);
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, rgba(212,175,55,0) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.contact-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    background: linear-gradient(135deg, #d4af37 0%, #c99a2e 100%);
+    border-color: #ffd700;
+    box-shadow: 0 20px 40px rgba(212,175,55,0.3);
+    color: #000;
+}
+
+.contact-card:hover::before {
+    opacity: 1;
+}
+
+.contact-card-icon {
+    font-size: 36px;
+    color: #d4af37;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.contact-card:hover .contact-card-icon {
+    color: #000;
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.contact-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    color: #ffd700;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    transition: color 0.4s ease;
+}
+
+.contact-card:hover h3 {
+    color: #000;
+}
+
+.contact-card-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    transition: color 0.4s ease;
+}
+
+.contact-card:hover .contact-card-label {
+    color: rgba(0,0,0,0.6);
+}
+
+.contact-card-link {
+    display: inline-block;
+    font-size: 14px;
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: 2px solid #d4af37;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    background: rgba(212,175,55,0.1);
+}
+
+.contact-card:hover .contact-card-link {
+    background: rgba(0,0,0,0.3);
+    color: #000;
+    border-color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .contact-section {
+        padding: 45px 25px;
+        margin: 70px auto;
+    }
+
+    .contact-section h2 {
+        font-size: 32px;
+    }
+
+    .contact-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .contact-card {
+        padding: 22px 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 35px 20px;
+        margin: 60px auto;
+        border-radius: 20px;
+    }
+
+    .contact-section h2 {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+    .contact-subtitle {
+        font-size: 14px;
+    }
+
+    .contact-header {
+        margin-bottom: 30px;
+    }
+
+    .contact-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .contact-card {
+        padding: 20px 16px;
+    }
+
+    .contact-card-icon {
+        font-size: 32px;
+    }
+
+    .contact-card h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 25px 16px;
+        margin: 50px 16px;
+    }
+
+    .contact-section h2 {
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+
+    .contact-subtitle {
+        font-size: 12px;
+    }
+
+    .contact-header {
+        margin-bottom: 25px;
+    }
+
+    .contact-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .contact-card {
+        padding: 18px 14px;
+        border-radius: 16px;
+    }
+
+    .contact-card-icon {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .contact-card h3 {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .contact-card-label {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    .contact-card-link {
+        font-size: 13px;
+        padding: 6px 14px;
+    }
 }
 
 @keyframes glow {
@@ -455,8 +693,8 @@ section p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
-    max-width: 900px;
-    margin: auto;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .activity-card1 {
@@ -511,7 +749,7 @@ section p {
 .events-section {
     max-width: 1100px;
     margin: 90px auto;
-    padding: 55px 30px;
+    padding: 50px 30px;
     background: rgba(0,0,0,0.55);
     backdrop-filter: blur(14px);
     border-radius: 24px;
@@ -971,52 +1209,7 @@ section p {
     box-shadow: 0 0 20px rgba(212,175,55,0.5);
 }
 
-.social-box a {
-    display: block;
-    margin: 15px 0;
-    font-size: 18px;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 10px;
-    transition: 0.3s ease;
-}
-
-.social-box a:hover {
-    background: rgba(212,175,55,0.15);
-    color: #d4af37;
-    transform: scale(1.05);
-}
-
-.social-box i {
-    margin-right: 10px;
-    font-size: 20px;
-    color: #d4af37;
-}
-
-.social-icons {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
-.social-icons a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #fff;
-    font-size: 18px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.social-icons a:hover {
-    background: rgba(212,175,55,0.2);
-    color: #d4af37;
-    box-shadow: 0 0 10px rgba(212,175,55,0.6);
-}
+/* Removed old social-box styles - replaced with contact card styles */
 
 /* =============================================
    ANNOUNCEMENT BANNER
@@ -1152,7 +1345,7 @@ body:has(.announcement-banner[style*="display: flex"]) .main-header {
 
     .es-divider { display: none; }
 
-    section { padding: 70px 18px; }
+    section { padding: 45px 25px; }
     section h2 { font-size: 26px; }
     section h4 { font-size: 22px; }
     section p  { font-size: 18px; }
@@ -1165,12 +1358,13 @@ body:has(.announcement-banner[style*="display: flex"]) .main-header {
     .college-logo-right { width: 38px; }
     .logos-right        { gap: 8px; margin-right: 50px; }
 
-    .events-section { padding: 36px 16px; margin: 60px 15px; }
+    .events-section { padding: 35px 20px; margin: 60px 20px; }
+    .upcoming-section { padding: 35px 20px; margin: 60px 20px; }
     .events-header h2 { font-size: 24px; }
     .event-featured-title { font-size: 20px; }
     .event-featured-desc  { font-size: 13px; }
 
-    section { padding: 60px 15px; }
+    section { padding: 35px 20px; margin: 60px 20px; }
     section h2 { font-size: 22px; }
     section h4 { font-size: 19px; }
     section p  { font-size: 16px; }
@@ -1180,7 +1374,7 @@ body:has(.announcement-banner[style*="display: flex"]) .main-header {
     .register-section,
     .activity-section,
     .history-section,
-    .contact-section { margin: 80px 15px; padding: 40px 20px; }
+    .contact-section { margin: 60px 20px; padding: 35px 20px; }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -1194,6 +1388,15 @@ body:has(.announcement-banner[style*="display: flex"]) .main-header {
     .menu-icon span { width: 26px; height: 3px; }
 
     .events-arena { grid-template-columns: 1fr 260px; }
+
+    .about-section,
+    .members-section,
+    .register-section,
+    .activity-section,
+    .history-section,
+    .contact-section,
+    .events-section,
+    .upcoming-section { padding: 45px 25px; margin: 80px auto; }
 }
 
 @media (min-width: 1024px) {
