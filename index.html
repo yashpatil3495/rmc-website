@@ -13,21 +13,6 @@
 </head>
 <body>
     
-    <!-- ========== ANNOUNCEMENT BANNER ========== -->
-    <div id="announcementBanner" class="announcement-banner" style="display:none;">
-        <div class="announcement-content" id="announcementContent"></div>
-        <button class="announcement-close" id="announcementClose" onclick="dismissBanner()">&times;</button>
-    </div>
-
-    <div class="video-bg">
-        <video autoplay muted loop playsinline preload="metadata">
-            <source src="img/rmcbackground.mp4" type="video/mp4">
-        </video>
-        <div class="video-overlay">
-            <img src="img/logo.png" class="logo">
-        </div>
-    </div>
-    
     <header class="main-header">
         <div class="logos-left">
             <img src="./img/jspm..png" alt="College Logo" class="college-logo-left" fetchpriority="high">
@@ -46,7 +31,22 @@
             <span></span>
         </div>
     </header>
+    
+    <!-- ========== ANNOUNCEMENT BANNER ========== -->
+    <div id="announcementBanner" class="announcement-banner" style="display:none;">
+        <div class="announcement-content" id="announcementContent"></div>
+        <button class="announcement-close" id="announcementClose" onclick="dismissBanner()">&times;</button>
+    </div>
 
+    <div class="video-bg">
+        <video autoplay muted loop playsinline preload="metadata">
+            <source src="img/rmcbackground.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay">
+            <img src="img/logo.png" class="logo">
+        </div>
+    </div>
+    
     <nav class="side-menu" id="sideMenu">
         <a href="#home" onclick="toggleMenu()">HOME</a>
         <a href="#about" onclick="toggleMenu()">ABOUT</a>
